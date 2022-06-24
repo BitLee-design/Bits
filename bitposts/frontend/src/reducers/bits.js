@@ -16,6 +16,11 @@ export default function(state = initialState, action) {
                 ...state,
                 bits: state.bits.filter(bit => bit.id !==action.payload)
             }
+        case ADD_BIT:
+            return {
+                ...state,
+                bits: [...state.bits, action.payload]
+            }
         default:
             return state;
     }

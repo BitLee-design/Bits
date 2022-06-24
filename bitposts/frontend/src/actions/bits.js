@@ -25,3 +25,14 @@ export const deleteBits = (id) => dispatch =>{
         .catch(err => console.log(err)); 
 };
 
+
+export const addBits = (bit) => dispatch =>{
+    axios.get('/api/leads')
+        .then(res => {
+            dispatch({
+                type: ADD_BIT,
+                payload: res.data
+            });
+        })
+        .catch(err => console.log(err)); 
+};
